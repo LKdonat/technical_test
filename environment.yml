@@ -1,0 +1,6 @@
+name: technical_test
+dependencies:
+  - python=3.11 # For more see : https://devguide.python.org/versions/
+  - pip
+  - pip: 
+    - polars>=1.31, <1.32
