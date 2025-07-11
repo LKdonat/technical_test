@@ -3,4 +3,13 @@ dependencies:
   - python=3.11 # For more see : https://devguide.python.org/versions/
   - pip
   - pip: 
-    - polars>=1.31, <1.32
+    - polars>=1.31,<1.32
+    - pyarrow>=20.0,<21.0
+    - pandas>=2.3,<2.4
+    - matplotlib>=3.10,<3.11
+    - seaborn>=0.13,<0.14
+    - scikit-learn>=1.7,<1.8
+    - mlflow>=2.22,<2.23
+    - fastparquet>=2024.11,<2024.12
+    - xgboost>=2.1,<2.2
+    - shap>=0.48,<0.49

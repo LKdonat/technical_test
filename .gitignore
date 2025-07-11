@@ -6,6 +6,9 @@ __pycache__/
 /data
 # C extensions
 *.so
+**/mlartifacts
+**/mlruns
+**/notebooks/mlruns
 
 # Distribution / packaging
 .Python
