@@ -54,7 +54,7 @@ def plot_dependence_plots(
     for i in range(data.shape[1]):
         shap.dependence_plot(
             ind="rank(" +str(i)+")",
-            ax = plt.figure(figsize = (5,5)).gca(),
+            ax = plt.figure(figsize = (10,5)).gca(),
             shap_values=shap_values.values,
             features=data,
             interaction_index=None,
