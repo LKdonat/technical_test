@@ -18,7 +18,7 @@ conda activate technical_test
 
 Create your instances & labels by executing the following notebook : [`notebooks/etl_pipeline.ipynb`](notebooks/etl_pipeline.ipynb)
 
-## **3 - ML pipeline : preprocess the data and train you model**
+## **3 - ML pipeline : preprocess the data and train your model**
 
 Wan't to see the logic behind the pre-processing step ? Go to : [`notebooks/exploration_for_preprocessing.ipynb`](notebooks/exploration_for_preprocessing.ipynb)
 
@@ -42,3 +42,9 @@ After executing all the cells go to the Mlflow UI and you shoud be able to see y
 Now if you click on the latest `model_training` run you will be able to see all the run information such as : all the parameters used throughout the execution, the training metrics,...
 
 Then if you go to the `Artifact` tab you'll find the model (model_artifacts), the classification reports (model_evaluation) and the shap dependence plots & importance variables plot (model_explanation).
+
+## **4 - Analytics & reporting**
+
+Not needed but in order to generate the table that feeds the PowerBI app you can run the following notebook : [`notebooks/analytics.ipynb`](notebooks/analytics.ipynb)
+
+To open the PBI app open the following file [`fraud_dashboard.pbix`](fraud_dashboard.pbix)
