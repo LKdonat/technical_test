@@ -39,6 +39,7 @@ def impute_missing_values(
 
     Args:
         data (pd.DataFrame): _description_
+        binary_columns_list (list): _description_
         imputation_rules (dict): _description_
 
     Returns:
@@ -83,69 +84,6 @@ def split_numeric_and_categorical_data(data: pd.DataFrame) -> tuple:
     LOGGER.info(f"{categorical_data.columns = }")
     return numerical_data, categorical_data 
 
-def _apply_new_category(
-    categorical_value: str, 
-    categorical_mapping: dict
-) -> str: 
-    """This function takes a mapping following this format : 
-    {
-        "value_1": "group_1"
-        "value_2": "group_1"
-        ...
-        "value_n": "group_3"
-    }
-
-    Then uses this mapping to group categorical columns with high cardinality following a logical grouping
-
-    Args:
-        categorical_value (str): _description_
-        categorical_mapping (dict): _description_
-
-    Returns:
-        str: _description_
-    """
-    formated_category = categorical_mapping.get(categorical_value, "OTHER")
-    return formated_category
-
-def group_high_cardinality_categorical_columns_values(data: pd.DataFrame, all_categorical_mappings: dict) -> pd.DataFrame: 
-    """This function takes all_categories_mappings as a parameter, it has the following format :
-    {
-        "col_1" : {
-            "value_1": "group_1"
-            "value_2": "group_1"
-            ...
-            "value_n": "group_3"
-        },
-        ...
-        "col_n" : {
-            "value_1": "group_1"
-            "value_2": "group_1"
-            ...
-            "value_n": "group_3"
-        },
-    }
-    Then uses it to group categorical columns with high cardinality into logical groups before encoding
-
-    Args:
-        data (pd.DataFrame): _description_
-        all_categorical_mappings (dict): _description_
-
-    Returns:
-        pd.DataFrame: _description_
-    """
-    for col, col_mapping in all_categorical_mappings.items():
-        LOGGER.info(f"Grouping column '{col}' categories with the following mapping : {col_mapping}")
-        data.loc[:, col] = (
-            data[col]
-            .apply(
-                lambda x : _apply_new_category(
-                    categorical_value= str(x), 
-                    categorical_mapping=col_mapping
-                )
-            )
-        )
-        LOGGER.info(f"New values for column '{col}' : {data[col].value_counts(dropna=False).to_dict()}")
-    return data
 
 def fit_categorical_encoder(data: pd.DataFrame, unknown_value: Union[int, float]) -> OrdinalEncoder:
     """In this function we fit the categorical encoder.
