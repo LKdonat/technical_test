@@ -28,7 +28,7 @@ Want to see the logic behind the pre-processing step ? Go to : [`notebooks/explo
 Start by executing the following command in your terminal :
 
 ```bash
-mlflow ui
+mlflow ui --port=5000
 ```
 
 And click on the printed link to acces the mlflow UI.
