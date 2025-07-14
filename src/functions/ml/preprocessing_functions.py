@@ -150,7 +150,7 @@ def group_high_cardinality_categorical_columns_values(data: pd.DataFrame, all_ca
 def fit_categorical_encoder(data: pd.DataFrame, unknown_value: Union[int, float]) -> OrdinalEncoder:
     """In this function we fit the categorical encoder.
     Why don't wee use fit_transform ? 
-    -> during inference we wan't the exact encoder that was fitted during training so that there is no risk of the categories changing encoded value if new categories appear in the future
+    -> during inference we want the exact encoder that was fitted during training so that there is no risk of the categories changing encoded value if new categories appear in the future
     -> during training we fit then transform 
     -> during inference we transform using the fitted encoder
 

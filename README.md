@@ -20,7 +20,7 @@ Create your instances & labels by executing the following notebook : [`notebooks
 
 ## **3 - ML pipeline : preprocess the data and train you model**
 
-Wan't to see the logic behind the pre-processing step ? Go to : [`notebooks/exploration_for_preprocessing.ipynb`](notebooks/exploration_for_preprocessing.ipynb)
+Want to see the logic behind the pre-processing step ? Go to : [`notebooks/exploration_for_preprocessing.ipynb`](notebooks/exploration_for_preprocessing.ipynb)
 
 
 ### **Model training & experiment tracking**
